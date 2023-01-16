@@ -1,0 +1,36 @@
+- create a store database
+
+CREATE TABLE vinyls (id INTEGER PRIMARY KEY, name TEXT, release_year INTEGER, price INTEGER, total INTEGER);
+INSERT INTO vinyls VALUES (1, "The Essential Glenn Miller", 1972, 29.99, 36);
+INSERT INTO vinyls VALUES (2, "Meet Me in St. Louis", 1944, 15.99, 39);
+INSERT INTO vinyls VALUES (3, "Bing's Gold Records", 1997, 24.99, 24);
+INSERT INTO vinyls VALUES (4, "Lady Day", 1945, 19.99, 37);
+INSERT INTO vinyls VALUES (5, "Basin Street Blues", 1976, 26.99, 27);
+INSERT INTO vinyls VALUES (6, "Dustbowl Ballads", 1998, 27.99, 31);
+INSERT INTO vinyls VALUES (7, "Don't Be That Way", 2001, 29.99, 22);
+INSERT INTO vinyls VALUES (8, "Instant Classics", 1935, 49.99, 20);
+INSERT INTO vinyls VALUES (9, "The Anthology", 1998, 12.99, 28);
+INSERT INTO vinyls VALUES (10, "The Essential Billie Holiday", 1935, 49.99, 45);
+INSERT INTO vinyls VALUES (11, "Billie Holiday's Greatest Hits", 1995, 49.99, 21);
+INSERT INTO vinyls VALUES (12, "Diva", 2003, 25.99, 33);
+INSERT INTO vinyls VALUES (13, "Gold", 2002, 23.99, 5);
+INSERT INTO vinyls VALUES (14, "The Voice Of Frank Sinatra", 1948, 29.99, 18);
+INSERT INTO vinyls VALUES (15, "The Best of the War Years", 2001, 15.99, 16);
+
+--display the database 
+SELECT * FROM vinyls;
+
+-How much inventory do I have of each vinyl record?
+SELECT name, total FROM vinyls;
+
+--Number of inventory from fewest to most
+SELECT name, total FROM vinyls GROUP BY total; 
+
+--vinyl price from cheapest to most expensive
+SELECT name, price FROM vinyls GROUP BY price;
+
+- show me how many records I have of each but order by least expensive to most expensive
+SELECT name, price, total FROM vinyls GROUP BY price;
+
+--show me record price and how many we have left
+SELECT name, price, total FROM vinyls GROUP BY total;
