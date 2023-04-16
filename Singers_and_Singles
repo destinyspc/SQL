@@ -5,12 +5,20 @@ INSERT INTO singers (name, home_state) VALUES ("Norah_Jones", "New_York");
 INSERT INTO singers (name, home_state) VALUES ("Frank_Sinatra", "New_Jersey");
 INSERT INTO singers (name, home_state) VALUES ("Billie_Holiday", "Pennsylvania");
 INSERT INTO singers (name, home_state) VALUES ("Ella_Fitzgerald", "Virginia");
+INSERT INTO singers (name, home_state) VALUES ("Taylor_Swift", "Pensylvania");
+INSERT INTO singers (name, home_state) VALUES ("Beyonce", "Texas");
+INSERT INTO singers (name, home_state) VALUES ("Michael_Jackson", "Indiana");
+INSERT INTO singers (name, home_state) VALUES ("Mariah_Carey", "New_York");
 
 CREATE TABLE hits (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, biggest_song_title TEXT, total_singles INTEGER);
 INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Norah_Jones", "Dont_Know_Why", 23);
 INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Frank_Sinatra", "My_Way", 209);
 INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Billie_Holiday", "All_of_Me", 38);
 INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Ella_Fitzgerald", "Cheek_to_Cheek", 150);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Taylor_Swift", "All_Too_Well", 57);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Beyonce", "Crazy_in_Love", 83);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Michael_Jackson", "Billie_Jean", 137);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Mariah_Carey", "All_I_Want_for_Christmas_is_You", 86);
 
 
 SELECT * FROM singers;
@@ -29,4 +37,3 @@ SELECT s.name, h.biggest_song_title, h.total_singles
     LEFT OUTER JOIN hits h
     ON s.id=h.id
     ORDER BY total_singles;
-    
