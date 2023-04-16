@@ -1,0 +1,32 @@
+CREATE TABLE singers (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    name TEXT,
+    home_state TEXT);
+INSERT INTO singers (name, home_state) VALUES ("Norah_Jones", "New_York");
+INSERT INTO singers (name, home_state) VALUES ("Frank_Sinatra", "New_Jersey");
+INSERT INTO singers (name, home_state) VALUES ("Billie_Holiday", "Pennsylvania");
+INSERT INTO singers (name, home_state) VALUES ("Ella_Fitzgerald", "Virginia");
+
+CREATE TABLE hits (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, biggest_song_title TEXT, total_singles INTEGER);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Norah_Jones", "Dont_Know_Why", 23);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Frank_Sinatra", "My_Way", 209);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Billie_Holiday", "All_of_Me", 38);
+INSERT INTO hits (name, biggest_song_title, total_singles) VALUES ("Ella_Fitzgerald", "Cheek_to_Cheek", 150);
+
+
+SELECT * FROM singers;
+
+SELECT * FROM hits;
+
+/* Show me the name of singer and their hit from the other table */
+SELECT s.name, h.biggest_song_title
+    FROM singers s
+    LEFT OUTER JOIN hits h
+    ON s.id=h.id;
+    
+/* Show me the name of singer, biggest song title, total number of single and in order from least singles to most  */
+SELECT s.name, h.biggest_song_title, h.total_singles
+    FROM singers s
+    LEFT OUTER JOIN hits h
+    ON s.id=h.id
+    ORDER BY total_singles;
+    
