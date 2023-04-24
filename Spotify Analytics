@@ -37,3 +37,9 @@ GROUP BY artist_name;
 SELECT artist_name, MAX(danceability)
 FROM Spotifydata;
 
+--Which songs have energy under 0.5?
+
+SELECT track_name AS "Tracks_with_low_energy", energy
+FROM Spotifydata 
+WHERE energy <0.500;
+
