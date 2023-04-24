@@ -32,4 +32,8 @@ SELECT artist_name, COUNT(artist_name)
 FROM Spotifydata
 GROUP BY artist_name;
 
---
+--Which artist has the highest danceability?
+
+SELECT artist_name, MAX(danceability)
+FROM Spotifydata;
+
