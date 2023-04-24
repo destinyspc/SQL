@@ -44,10 +44,18 @@ FROM Spotifydata
 WHERE energy <0.500;
 
 --Show top 10 tracks, the artists of the tracks where energy is more than .5, popularity is more than 90, and danceability is also greater than 0.5.
+
 SELECT track_name, artist_name, energy, popularity, danceability 
 FROM Spotifydata
 WHERE  energy >0.500 
 AND popularity >90 
 AND danceability >0.5
+LIMIT 10;
+
+--TOp 10 artists by polularity
+
+SELECT artist_name, track_name, popularity 
+FROM Spotifydata
+ORDER BY popularity desc 
 LIMIT 10;
 
