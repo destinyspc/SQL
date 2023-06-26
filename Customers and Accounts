@@ -114,3 +114,10 @@ FROM BIT_DB.JanSales
 GROUP BY product
 ORDER BY sum(quantity*price) desc
 LIMIT 1;
+
+--What is the total revenue for each product sold in February?
+
+SELECT sum(quantity)*price AS revenue, product
+FROM BIT_DB.FebSales
+GROUP BY product;
+
