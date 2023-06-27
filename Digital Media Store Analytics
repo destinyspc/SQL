@@ -13,7 +13,7 @@ SELECT CustomerId, FirstName, LastName, Country
 FROM chinook.customers
 WHERE Country = 'Canada';
 
---Find the incouces of customers from Canada and order by most recent order
+--Find the invoices of customers from Canada and order by most recent order
 
 SELECT c.CustomerId, c.FirstName, c.LastName, i.InvoiceID, 
 i.InvoiceDate, i.BillingCountry, i.Total 
